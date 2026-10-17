@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" fill="none">
+  <!-- Lotus Mandala - Nghệ thuật Bệ Đá Hoa Sen Thời Lý (Thế kỷ XI) -->
+  <defs>
+    <!-- Soft warm gold/bronze gradient for petal fill -->
+    <radialGradient id="ly-lotus-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C5A880" stop-opacity="0.22" />
+      <stop offset="50%" stop-color="#8C6B3E" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#554134" stop-opacity="0.02" />
+    </radialGradient>
+    <linearGradient id="ly-petal-fill" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#8C6B3E" stop-opacity="0.16" />
+      <stop offset="70%" stop-color="#C5A880" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02" />
+    </linearGradient>
+
+    <!-- Cánh Sen Thời Lý Chuẩn: Dáng lá bồ đề nhọn đỉnh, thon đáy, viền uốn lượn điêu khắc -->
+    <g id="ly-petal-outer">
+      <!-- Mảng cánh chính (Fill + Stroke) -->
+      <path
+        d="M250,250 
+           C232,190 200,165 190,120 
+           C182,85 210,48 244,18 
+           C247,15 250,12 250,12 
+           C250,12 253,15 256,18 
+           C290,48 318,85 310,120 
+           C300,165 268,190 250,250 Z"
+        fill="url(#ly-petal-fill)"
+        stroke="#8C6B3E"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      />
+      <!-- Viền gờ nổi thứ hai bên trong mép cánh (Kỹ thuật chạm lộng cánh sen kép thời Lý) -->
+      <path
+        d="M250,230 
+           C236,182 212,160 205,124 
+           C198,92 220,62 250,32 
+           C280,62 302,92 295,124 
+           C288,160 264,182 250,230 Z"
+        fill="none"
+        stroke="#8C6B3E"
+        stroke-width="1.0"
+        stroke-opacity="0.65"
+      />
+      <!-- Sống gân giữa cánh sen hình mũi giáo thanh thoát -->
+      <line x1="250" y1="210" x2="250" y2="42" stroke="#8C6B3E" stroke-width="1.2" stroke-opacity="0.7" />
+      <!-- Hoa văn chạm khắc lá búp bên trong lòng cánh sen Lý -->
+      <path
+        d="M236,115 C244,95 250,75 250,75 C250,75 256,95 264,115 C256,110 244,110 236,115 Z"
+        fill="#8C6B3E"
+        fill-opacity="0.25"
+        stroke="#8C6B3E"
+        stroke-width="0.8"
+      />
+    </g>
+
+    <!-- Cánh Sen Tầng Trong (Nhỏ hơn, ôm sát tâm) -->
+    <g id="ly-petal-inner">
+      <path
+        d="M250,250 
+           C236,210 216,190 212,158 
+           C208,132 226,108 250,86 
+           C274,108 292,132 288,158 
+           C284,190 264,210 250,250 Z"
+        fill="#C5A880"
+        fill-opacity="0.18"
+        stroke="#554134"
+        stroke-width="1.4"
+        stroke-linejoin="round"
+      />
+      <line x1="250" y1="230" x2="250" y2="102" stroke="#554134" stroke-width="1.0" stroke-opacity="0.6" />
+    </g>
+  </defs>
+
+  <!-- Nền hào quang tròn bao bọc đóa sen -->
+  <circle cx="250" cy="250" r="238" fill="url(#ly-lotus-glow)" />
+
+  <!-- Vành ngoài hạt ngọc / chuỗi cườm thời Lý -->
+  <circle cx="250" cy="250" r="238" stroke="#8C6B3E" stroke-width="1.2" stroke-dasharray="3 7" stroke-opacity="0.4" />
+  <circle cx="250" cy="250" r="230" stroke="#8C6B3E" stroke-width="0.8" stroke-opacity="0.3" />
+
+  <!-- TẦNG CÁNH NGOÀI: 8 Cánh sen lớn xòe 8 hướng (0, 45, 90, 135, 180, 225, 270, 315 độ) -->
+  <g id="outer-petals-group">
+    <use href="#ly-petal-outer" />
+    <use href="#ly-petal-outer" transform="rotate(45 250 250)" />
+    <use href="#ly-petal-outer" transform="rotate(90 250 250)" />
+    <use href="#ly-petal-outer" transform="rotate(135 250 250)" />
+    <use href="#ly-petal-outer" transform="rotate(180 250 250)" />
+    <use href="#ly-petal-outer" transform="rotate(225 250 250)" />
+    <use href="#ly-petal-outer" transform="rotate(270 250 250)" />
+    <use href="#ly-petal-outer" transform="rotate(315 250 250)" />
+  </g>
+
+  <!-- TẦNG CÁNH TRONG: 8 Cánh sen so le góc 22.5 độ tạo độ sâu đa tầng -->
+  <g id="inner-petals-group">
+    <use href="#ly-petal-inner" transform="rotate(22.5 250 250)" />
+    <use href="#ly-petal-inner" transform="rotate(67.5 250 250)" />
+    <use href="#ly-petal-inner" transform="rotate(112.5 250 250)" />
+    <use href="#ly-petal-inner" transform="rotate(157.5 250 250)" />
+    <use href="#ly-petal-inner" transform="rotate(202.5 250 250)" />
+    <use href="#ly-petal-inner" transform="rotate(247.5 250 250)" />
+    <use href="#ly-petal-inner" transform="rotate(292.5 250 250)" />
+    <use href="#ly-petal-inner" transform="rotate(337.5 250 250)" />
+  </g>
+
+  <!-- VÒNG NHỤY HOA SEN (STAMENS): Các tia nhụy hướng tâm kết thúc bằng hạt phấn tròn -->
+  <g id="lotus-stamens" stroke="#8C6B3E" stroke-width="1.0" stroke-opacity="0.8">
+    <circle cx="250" cy="250" r="54" stroke="#8C6B3E" stroke-width="1.0" stroke-dasharray="2 4" fill="none" />
+    <!-- Vòng chấm hạt nhụy sen -->
+    <circle cx="250" cy="198" r="2.2" fill="#8C6B3E" />
+    <circle cx="270" cy="202" r="2.2" fill="#8C6B3E" />
+    <circle cx="288" cy="214" r="2.2" fill="#8C6B3E" />
+    <circle cx="300" cy="232" r="2.2" fill="#8C6B3E" />
+    <circle cx="302" cy="250" r="2.2" fill="#8C6B3E" />
+    <circle cx="300" cy="268" r="2.2" fill="#8C6B3E" />
+    <circle cx="288" cy="286" r="2.2" fill="#8C6B3E" />
+    <circle cx="270" cy="298" r="2.2" fill="#8C6B3E" />
+    <circle cx="250" cy="302" r="2.2" fill="#8C6B3E" />
+    <circle cx="230" cy="298" r="2.2" fill="#8C6B3E" />
+    <circle cx="212" cy="286" r="2.2" fill="#8C6B3E" />
+    <circle cx="200" cy="268" r="2.2" fill="#8C6B3E" />
+    <circle cx="198" cy="250" r="2.2" fill="#8C6B3E" />
+    <circle cx="200" cy="232" r="2.2" fill="#8C6B3E" />
+    <circle cx="212" cy="214" r="2.2" fill="#8C6B3E" />
+    <circle cx="230" cy="202" r="2.2" fill="#8C6B3E" />
+  </g>
+
+  <!-- TÂM GƯƠNG SEN (LIÊN PHÒNG): Đài sen tròn và các lỗ hạt sen đặc trưng -->
+  <g id="lotus-pod">
+    <!-- Nền gương sen men ngà đậm -->
+    <circle cx="250" cy="250" r="38" fill="#EDE2D1" stroke="#554134" stroke-width="1.8" />
+    <circle cx="250" cy="250" r="34" stroke="#8C6B3E" stroke-width="0.8" stroke-dasharray="2 3" fill="none" />
+    <!-- Vòng chấm tròn sơn mài đỏ accent rất tiết chế ở tâm -->
+    <circle cx="250" cy="250" r="6" fill="#9E3324" fill-opacity="0.85" />
+    <!-- 6 Hạt sen đối xứng tỏa tròn quanh tâm -->
+    <circle cx="250" cy="232" r="3.2" fill="#554134" />
+    <circle cx="266" cy="241" r="3.2" fill="#554134" />
+    <circle cx="266" cy="259" r="3.2" fill="#554134" />
+    <circle cx="250" cy="268" r="3.2" fill="#554134" />
+    <circle cx="234" cy="259" r="3.2" fill="#554134" />
+    <circle cx="234" cy="241" r="3.2" fill="#554134" />
+  </g>
+</svg>

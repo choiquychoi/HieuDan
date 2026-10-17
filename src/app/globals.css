@@ -1,0 +1,1109 @@
+@import "tailwindcss";
+
+:root {
+  /* Final Design System - Modern Vietnamese Heritage */
+  --background: #F5F0E7;
+  --surface: #FFFCF5;
+  --surface-hover: #F0E8DC;
+  --card: #FFFCF5;
+
+  --foreground: #2B241F;
+  --muted: #7D746A;
+  --muted-dark: #574F46;
+
+  --accent: #B49368;
+  --accent-hover: #C5A880;
+  --accent-subtle: rgba(180, 147, 104, 0.12);
+
+  --secondary-beige: #E9E0D2;
+  --dark-brown: #3A2920;
+  --walnut-surface: #453227;
+
+  --border: #D8CDBD;
+  --border-subtle: #E6DDD0;
+  --border-walnut: #554134;
+
+  --success: #6F8F72;
+  --error: #A65D55;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-card: var(--card);
+
+  --color-muted: var(--muted);
+  --color-muted-dark: var(--muted-dark);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+
+  --color-secondary-beige: var(--secondary-beige);
+  --color-dark-brown: var(--dark-brown);
+  --color-walnut-surface: var(--walnut-surface);
+
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-walnut: var(--border-walnut);
+
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, [role="button"], [role="tab"] {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible, [role="button"]:focus-visible, [role="tab"]:focus-visible {
+  outline: none;
+}
+
+html {
+  color-scheme: light;
+  overflow-x: clip;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background-color: var(--accent);
+  color: #FFFCF5;
+}
+
+/* Elegant Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CDBD;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B49368;
+}
+
+/* ==========================================================================
+   HOMEPAGE TYPOGRAPHY SYSTEM (STRICT SPECIFICATION)
+   ========================================================================== */
+
+/* 1. Section Eyebrow: Inter, 11.5px/12.5px, Semibold, Uppercase, Tracking 0.22em */
+.eyebrow-label {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  line-height: 1.2;
+}
+@media (min-width: 640px) {
+  .eyebrow-label {
+    font-size: 12.5px;
+  }
+}
+
+/* 2. Section Headline (h2): Inter, Semibold, Leading 1.2 (28px / 34px / 40px) */
+.section-headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-size: 28px;
+}
+@media (min-width: 640px) {
+  .section-headline {
+    font-size: 34px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-headline {
+    font-size: 40px;
+  }
+}
+
+/* 3. Category Title: Inter, Semibold (20px / 24px / 28px) */
+.category-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  font-size: 20px;
+}
+@media (min-width: 640px) {
+  .category-title {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .category-title {
+    font-size: 28px;
+  }
+}
+
+/* 4. Product Title: Inter, Semibold (17px / 19px) */
+.product-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.3;
+  font-size: 17px;
+}
+@media (min-width: 1024px) {
+  .product-title {
+    font-size: 19px;
+  }
+}
+
+/* 5. Body Copy: Inter, Regular (400), Leading 1.7 (15px / 16px) */
+.body-copy {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 15px;
+}
+@media (min-width: 1024px) {
+  .body-copy {
+    font-size: 16px;
+  }
+}
+
+/* 6. CTA and Utility Text: Inter, 12px/13px, Semibold, Uppercase, Tracking 0.12em */
+.cta-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+}
+@media (min-width: 640px) {
+  .cta-label {
+    font-size: 13px;
+  }
+}
+
+/* 7. Museum Form Input Label: Inter, 12px/13px, Medium, Tracking 0.16em (WCAG compliant) */
+.form-label-museum {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  color: #574F46;
+}
+@media (min-width: 640px) {
+  .form-label-museum {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================================
+   HIGH-PERFORMANCE HARDWARE-ACCELERATED TEXTURES
+   ========================================================================== */
+
+/* 1. Warm Ivory Handmade-Paper / Dó Grain Texture */
+.bg-ivory-texture {
+  background-color: #FFFCF5;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(229, 195, 152, 0.08) 0%, transparent 75%);
+  contain: paint;
+}
+
+/* 2. Hero Stage Amber & Acoustic Tonewood Texture */
+.bg-walnut-texture {
+  background-color: #f5e598;
+  background-image: 
+    radial-gradient(ellipse 85% 60% at 50% 15%, rgba(222, 120, 46, 0.45) 0%, rgba(113, 58, 28, 0.85) 60%, #381A0B 100%),
+    linear-gradient(180deg, rgba(42, 18, 9, 0.35) 0%, rgba(26, 12, 6, 0.55) 100%),
+    radial-gradient(circle at 85% 15%, rgba(255, 180, 100, 0.15) 0%, transparent 55%);
+  contain: paint;
+}
+
+/* 3. Catalogue / Art-Book Framing */
+.catalogue-frame {
+  position: relative;
+  border: 1px solid rgba(216, 205, 189, 0.85);
+  background-color: #F5F0E7;
+  padding: 4px;
+}
+
+.catalogue-frame-inner {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(180, 147, 104, 0.25);
+}
+
+/* ==========================================================================
+   LENIS SMOOTH SCROLL STYLES
+   ========================================================================== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Keyframe Animations */
+@keyframes floatDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-float-down {
+  animation: floatDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* ==========================================================================
+   LIVING EXHIBITION ANIMATION SYSTEM (POETIC, CALM & CINEMATIC)
+   ========================================================================== */
+
+/* 1. Organic Irregular Floating Choreography (10.5s cycle: ~14px vertical, ~5px horizontal, max 0.6deg rotation) */
+@keyframes poeticFloat {
+  0% {
+    transform: translate3d(0, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(3.5px, -7px, 0) rotate(0.45deg);
+  }
+  50% {
+    transform: translate3d(-2.5px, -14px, 0) rotate(-0.5deg);
+  }
+  75% {
+    transform: translate3d(4.5px, -6px, 0) rotate(0.3deg);
+  }
+  100% {
+    transform: translate3d(0, 0px, 0) rotate(0deg);
+  }
+}
+
+/* 2. Inversely Synchronized Breathing Shadow */
+@keyframes shadowBreathe {
+  0% {
+    transform: translateX(-50%) scaleX(0.92) scaleY(0.95);
+    opacity: 0.90;
+    filter: blur(10px);
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1.15) scaleY(1.08);
+    opacity: 0.45;
+    filter: blur(22px);
+  }
+  100% {
+    transform: translateX(-50%) scaleX(0.92) scaleY(0.95);
+    opacity: 0.90;
+    filter: blur(10px);
+  }
+}
+
+/* 3. Breathing Warm Amber Halo behind Cutout */
+@keyframes amberHaloBreathe {
+  0% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+  100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+}
+
+/* 4. Subtle Amber Sheen Sweep Across Cutout */
+@keyframes sheenSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  35% {
+    opacity: 0.22;
+  }
+  65% {
+    opacity: 0.22;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+/* 5. Drifting Golden Dust Motes / Ambient Particles (Sparse, Soft) */
+@keyframes moteDrift1 {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate3d(18px, -24px, 0);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.15;
+  }
+}
+
+@keyframes moteDrift2 {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(-20px, -32px, 0);
+    opacity: 0.12;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.35;
+  }
+}
+
+@keyframes moteDrift3 {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate3d(14px, -18px, 0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+}
+
+.animate-poetic-float {
+  animation: poeticFloat 10.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-shadow-breathe {
+  animation: shadowBreathe 10.5s ease-in-out infinite;
+  will-change: transform, opacity, filter;
+}
+
+.animate-halo-breathe {
+  animation: amberHaloBreathe 10.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-sheen {
+  animation: sheenSweep 9s ease-in-out infinite;
+}
+
+.animate-mote-1 {
+  animation: moteDrift1 14s ease-in-out infinite;
+}
+
+.animate-mote-2 {
+  animation: moteDrift2 18s ease-in-out infinite;
+}
+
+.animate-mote-3 {
+  animation: moteDrift3 16s ease-in-out infinite;
+}
+
+/* Accessibility: Disable motion when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-poetic-float,
+  .animate-shadow-breathe,
+  .animate-halo-breathe,
+  .animate-sheen,
+  .animate-mote-1,
+  .animate-mote-2,
+  .animate-mote-3,
+  .editorial-fade-up-1,
+  .editorial-fade-up-2,
+  .editorial-fade-up-3,
+  .editorial-cover-reveal,
+  .editorial-reveal-item,
+  .editorial-pull-quote-line,
+  .editorial-pull-quote-text {
+    animation: none !important;
+    clip-path: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+
+/* Editorial Magazine Motion Styles */
+@keyframes editorialFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editorialCoverWipe {
+  from {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0.7;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.editorial-fade-up-1 {
+  animation: editorialFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 0ms forwards;
+}
+
+.editorial-fade-up-2 {
+  animation: editorialFadeUp 650ms cubic-bezier(0.16, 1, 0.3, 1) 120ms forwards;
+  opacity: 0;
+}
+
+.editorial-fade-up-3 {
+  animation: editorialFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) 240ms forwards;
+  opacity: 0;
+}
+
+.editorial-cover-reveal {
+  animation: editorialCoverWipe 850ms cubic-bezier(0.16, 1, 0.3, 1) 360ms forwards;
+  clip-path: inset(100% 0 0 0);
+}
+
+.editorial-reveal-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.editorial-reveal-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-pull-quote-line {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.is-revealed .editorial-pull-quote-line {
+  transform: scaleY(1);
+}
+
+.editorial-pull-quote-text {
+  opacity: 0;
+  transition: opacity 550ms ease-out 200ms;
+}
+
+.is-revealed .editorial-pull-quote-text {
+  opacity: 1;
+}
+
+/* Exhibition About & Stories Page Motion Styles */
+.about-reveal-item,
+.story-reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.about-reveal-item.is-revealed,
+.story-reveal-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth & Distinct Route Page Transition */
+@keyframes pageTransitionFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.992);
+    filter: blur(2px);
+  }
+  40% {
+    opacity: 0.6;
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes routeProgressBar {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  60% {
+    transform: scaleX(0.75);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+.page-transition-enter {
+  animation: pageTransitionFadeIn 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform, filter;
+}
+
+.route-progress-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8C6B3E, #B49368, #E5C398);
+  transform-origin: left;
+  animation: routeProgressBar 750ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal-item,
+  .story-reveal-item,
+  .page-transition-enter,
+  .route-progress-indicator {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   HEIGHT-AWARE RESPONSIVE UTILITIES (MacBook 13"/14", low-height viewports)
+   ========================================================================== */
+@media (max-height: 750px) {
+  .hero-compact-height {
+    min-height: 480px !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  .hero-stage-compact {
+    max-height: 330px !important;
+  }
+  .hero-dossier-compact {
+    max-height: 80dvh !important;
+  }
+}
+
+/* Thin Editorial Scrollbar for Overlays and Drawers */
+.editorial-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.editorial-scrollbar::-webkit-scrollbar-track {
+  background: rgba(36, 23, 17, 0.35);
+}
+.editorial-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(180, 147, 104, 0.4);
+  border-radius: 3px;
+}
+.editorial-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 147, 104, 0.8);
+}
+
+/* ==========================================================================
+   HERITAGE AMBIENT ANIMATIONS (Contemporary Lotus Mandorla & Lac Bird Flight)
+   ========================================================================== */
+@keyframes heritage-lotus-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heritage-lotus-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.88;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes heritage-lac-glide {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-1.5deg);
+  }
+}
+
+@keyframes heritage-lac-glide-subtle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(1deg);
+  }
+}
+
+.animate-lotus-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+  animation: heritage-lotus-spin 45s linear infinite;
+}
+
+.animate-lotus-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: heritage-lotus-pulse 14s ease-in-out infinite;
+}
+
+.animate-lac-glide {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+  animation: heritage-lac-glide 10s ease-in-out infinite;
+}
+
+.animate-lac-glide-subtle {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+  animation: heritage-lac-glide-subtle 12s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-lotus-spin,
+  .animate-lotus-pulse,
+  .animate-lac-glide,
+  .animate-lac-glide-subtle {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   PRODUCT TITLE AUTO-SCROLL (HOVER MARQUEE WITH MOBILE & TOUCH WRAP FALLBACK)
+   ========================================================================== */
+
+/* Default / Touch: spacer and duplicate are hidden; 2-line clamp on mobile/touch */
+.auto-scroll-spacer,
+.auto-scroll-duplicate {
+  display: none !important;
+}
+
+@media (max-width: 639px), (hover: none) {
+  .auto-scroll-mobile-wrap {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    min-height: 2.5rem;
+    line-height: 1.25;
+  }
+}
+
+/* Desktop with mouse hover: 1-line smooth auto-scroll on card hover */
+@media (min-width: 640px) and (hover: hover) {
+  .auto-scroll-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    max-width: 100%;
+  }
+
+  .auto-scroll-primary {
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  .auto-scroll-spacer {
+    display: inline-flex !important;
+  }
+
+  .auto-scroll-duplicate {
+    display: inline-block !important;
+    white-space: nowrap;
+  }
+
+  /* Soft gradient mask on right edge so overflowing text fades gently */
+  .auto-scroll-has-overflow {
+    mask-image: linear-gradient(to right, black calc(100% - 22px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 22px), transparent 100%);
+  }
+
+  .auto-scroll-track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+    transform: translateX(0);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Trigger smooth glide on card hover (.group:hover), focus, or title container hover */
+  .group:hover .auto-scroll-track-active,
+  .group:focus-within .auto-scroll-track-active,
+  .auto-scroll-container:hover .auto-scroll-track-active,
+  .auto-scroll-container:focus-within .auto-scroll-track-active {
+    transform: translateX(var(--cycle-dist));
+    transition: transform var(--cycle-dur) linear 0.5s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-scroll-track {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ========================================================================= */
+/* EDITORIAL PROSE SYSTEM (RICH TEXT EDITOR / CMS CONTENT RENDERER)          */
+/* ========================================================================= */
+.editorial-prose {
+  color: #3A2920;
+  font-family: var(--font-sans);
+  line-height: 1.85;
+  font-size: 1.125rem; /* 18px */
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .editorial-prose {
+    font-size: 1.1875rem; /* 19px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .editorial-prose {
+    font-size: 1.25rem; /* 20px - To rõ, đọc rất sướng mắt */
+    line-height: 1.9;
+  }
+}
+
+.editorial-prose > * + * {
+  margin-top: 1.75rem;
+}
+
+/* Headings */
+.editorial-prose h2 {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  line-height: 1.3;
+  color: #1F1610;
+  font-weight: 600;
+  margin-top: 3.25rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(227, 218, 205, 0.85);
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .editorial-prose h2 {
+    font-size: 2.35rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .editorial-prose h2 {
+    font-size: 2.65rem;
+  }
+}
+
+.editorial-prose h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: #2E2019;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .editorial-prose h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .editorial-prose h3 {
+    font-size: 2rem;
+  }
+}
+
+.editorial-prose h4 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A68052;
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+}
+
+/* Paragraphs & Text */
+.editorial-prose p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #3D332A;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.editorial-prose strong,
+.editorial-prose b {
+  color: #1F1610;
+  font-weight: 600;
+}
+
+.editorial-prose em,
+.editorial-prose i {
+  font-style: italic;
+  color: #3A2920;
+}
+
+/* Links */
+.editorial-prose a {
+  color: #A68052;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.editorial-prose a:hover {
+  color: #1F1610;
+}
+
+/* Blockquotes / Workshop Quotations */
+.editorial-prose blockquote {
+  position: relative;
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.75rem 1.5rem 2.25rem;
+  background-color: #FAF7F2;
+  border-left: 4px solid #A68052;
+  border-radius: 2px;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  line-height: 1.65;
+  color: #2E2019;
+  font-style: italic;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+@media (min-width: 640px) {
+  .editorial-prose blockquote {
+    font-size: 1.45rem;
+    padding: 1.75rem 2.5rem 1.75rem 3rem;
+  }
+}
+
+.editorial-prose blockquote p {
+  margin: 0;
+  color: inherit;
+  text-align: left;
+}
+
+.editorial-prose blockquote cite {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8C6B3E;
+  margin-top: 1rem;
+}
+
+/* Lists */
+.editorial-prose ul {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.editorial-prose ul > li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-top: 0.65rem;
+  margin-bottom: 0.65rem;
+  color: #3D332A;
+}
+
+.editorial-prose ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #A68052;
+}
+
+.editorial-prose ol {
+  list-style: decimal;
+  padding-left: 2rem;
+  margin: 1.5rem 0;
+}
+
+.editorial-prose ol > li {
+  margin-top: 0.65rem;
+  margin-bottom: 0.65rem;
+  padding-left: 0.5rem;
+  color: #3D332A;
+}
+
+/* Custom Table for Specs & Measurements */
+.editorial-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 1.0625rem;
+  border: 1px solid rgba(227, 218, 205, 0.9);
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.editorial-prose th {
+  background-color: #F5EFE6;
+  color: #1F1610;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid #D8CDBD;
+}
+
+.editorial-prose td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(227, 218, 205, 0.7);
+  color: #3A2920;
+}
+
+.editorial-prose tr:last-child td {
+  border-bottom: none;
+}
+
+.editorial-prose tr:nth-child(even) td {
+  background-color: #FAF8F5;
+}
+
+/* Images & Figures embedded in Content */
+.editorial-prose figure {
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.editorial-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+  border: 1px solid #E3DACD;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.editorial-prose figcaption {
+  font-size: 0.8125rem;
+  color: #706458;
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+/* Horizontal Rule / Divider */
+.editorial-prose hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D8CDBD, transparent);
+  margin: 2.75rem 0;
+}

@@ -67,6 +67,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/admin/:path*",
+        destination: `${CMS_URL}/admin/:path*`,
+        permanent: false,
+      },
+      {
+        source: "/admin",
+        destination: `${CMS_URL}/admin`,
+        permanent: false,
+      },
+      {
         source: "/privacy",
         destination: "/chinh-sach#bao-mat",
         permanent: true,

@@ -1,5 +1,10 @@
 import type { NextConfig } from "next";
 
+const CMS_URL =
+  process.env.CMS_URL ||
+  process.env.NEXT_PUBLIC_CMS_URL ||
+  "http://localhost:3001";
+
 const nextConfig: NextConfig = {
   compress: true,
   images: {
@@ -21,7 +26,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/uploads/:path*",
-        destination: "http://localhost:3001/uploads/:path*",
+        destination: `${CMS_URL}/uploads/:path*`,
       },
     ];
   },
